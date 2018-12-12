@@ -6,6 +6,11 @@ JavaScript is powering everything, and there are [hundreds of different ways to 
 
 This project aims at trying to remedy this. Just as the adoption of `TypeScript` has changed the way we write code, we may have the same abiltiy to add "Types" to a individual or groups of __Files__ on the system. The goal is simple, consistenty and freedom. The framework users of the future will have not have to guess how the strucutre of an app works. Framework authors will be able to swap out the implementation of `v` in `mvc` with whatever they want with little to no cost.
 
+This file outlines two different ideas:
+
+1. [The invention of `File` and `Folder` "Types"](#word-about-language-agnosticism)
+2. [JavaScript / TypeScript `File` Types defined by AST parsing](#Recipies)
+
 ## Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
