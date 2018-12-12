@@ -36,6 +36,9 @@ This file outlines two different ideas:
 - [JSON based Query](#json-based-query)
 - [Many ways of doing the same thing](#many-ways-of-doing-the-same-thing)
 - [Word about language agnosticism](#word-about-language-agnosticism)
+- [Where does a definition live in a project?](#where-does-a-definition-live-in-a-project)
+  - [1. Root switchboard](#1-root-switchboard)
+  - [2. Config File within Folder](#2-config-file-within-folder)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -424,3 +427,14 @@ This is bigger then just validating JavaScript and TypeScript types within the e
 * This could ensure that there are relationships between files in different folders, for example for every `/report/aug.json` ensure `/report-yaml/aug.yml` exists.
 * "This folder" ensure valid JSON files only.
 * "This folder" ensure only PNG files named `YYYY-MM-DD-N.png`.
+
+## Where does a definition live in a project?
+
+### 1. Root switchboard
+
+At the root of an app theres a switchboard file and tells what folders and files contain what types.
+
+### 2. Config File within Folder
+
+Within each Folder theres a config that describes it's type.
+
