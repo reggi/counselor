@@ -4,6 +4,8 @@
 
 JavaScript is powering everything, and there are [hundreds of different ways to do things](https://twitter.com/thomasreggi/status/1011984925027954688), small decisions here and there that different developers need to keep making. We look at the days when project frameworks came with conventions like [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) with both longing for understanding and unease at being restricted. Words like `system`, `controller`, `services`, `model`, `utils`, `libs`, `common`, `main`, `server`, `app`, all start to loose their meaning when they are next to other similar concepts, theres a mixing, a concept soup that takes these once great ideas and strips them of context. 
 
+What if in your app you can explicity define what a `controller` is. So-much-so that if someone created and named the file incorrectly you would get linting-style errors. What if this `controller` was allowed to `import` from `utils` but not directly from the database? How do you prevent this? 
+
 This project aims at trying to remedy this. Just as the adoption of `TypeScript` has changed the way we write code, we may have the same abiltiy to add "Types" to a individual or groups of __Files__ on the system. The goal is simple, consistenty and freedom. The framework users of the future will have not have to guess how the strucutre of an app works. Framework authors will be able to swap out the implementation of `v` in `mvc` with whatever they want with little to no cost.
 
 This file outlines two different ideas:
