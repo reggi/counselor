@@ -2,6 +2,10 @@
 
 > "JavaScript File Types"
 
+JavaScript is powering everything, and there are [hundreds of different ways to do things](https://twitter.com/thomasreggi/status/1011984925027954688), small decisions here and there that different developers need to keep making. We look at the days when project frameworks came with conventions like [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) with both longing for understanding and unease at being restricted. Words like `system`, `controller`, `services`, `model`, `utils`, `libs`, `common`, `main`, `server`, `app`, all start to loose their meaning when they are next to other similar concepts, theres a mixing, a concept soup that takes these once great ideas and strips them of context. 
+
+This project aims at trying to remedy this. Just as the adoption of `TypeScript` has changed the way we write code, we may have the same abiltiy to add "Types" to a individual or groups of __Files__ on the system. The goal is simple, consistenty and freedom. The framework users of the future will have not have to guess how the strucutre of an app works. Framework authors will be able to swap out the implementation of `v` in `mvc` with whatever they want with little to no cost.
+
 ## Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -24,6 +28,7 @@
 - [Use case parking lot](#use-case-parking-lot)
 - [JSON based Query](#json-based-query)
 - [Many ways of doing the same thing](#many-ways-of-doing-the-same-thing)
+- [Word about language agnosticism](#word-about-language-agnosticism)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -360,3 +365,55 @@ export default () => {
     return 'example'
 }
 ```
+
+## Word about language agnosticism
+
+Files and folders drive everything, servers, phones, apps, family photos, music, absolutly everything. As an individual I find it frustrating and difficult to be consistent when it comes to naming and organizing files and folders. I've tried all bunch of tricks and I'm pretty dicipline but it's dirty work. Throw in multiple people managing one set of files, think google drive, drop box, or a git repo, it's hard.
+
+I've had `TypeScript` on the brain a lot so here's an example of how to manage Files and Folders with `TypeScript`.
+
+* Given `File` is a type and it takes optional extentions.
+* A `File[]` is a `Folder`, it's a list of `Files`.
+* An `interface` also maps to a `Folder` but with different `Files` and `Folders` in it.
+
+Here's the example:
+
+```typescript
+type ArticleImageFile = File<"png" | "jpg" | "svg">
+
+interface Article {
+    images: ArticleImageFile[],
+    post: File<"md">,
+}
+
+type ArticlesFolder = ArticleFolder[]
+```
+
+This means that this tree is valid:
+
+```
+/articles
+  /2018-11-01-alpha
+    /images
+       rainbow.jpg
+    /post.md
+  /2018-12-11-beta
+    /images
+       sloth.svg
+    /post.md
+```
+
+__What do I want?__
+
+* I want something to yell at me if they put a image in the wrong place.
+* I want something to yell if `post.md` is missing.
+
+__Why am I sharing this?__
+
+This is bigger then just validating JavaScript and TypeScript types within the ecosystem.
+
+* This paradigm could be used to validate a folder of `pdfs`
+* This could be used to ensure naming conventions across `Files` and `Folders`
+* This could ensure that there are relationships between files in different folders, for example for every `/report/aug.json` ensure `/report-yaml/aug.yml` exists.
+* "This folder" ensure valid JSON files only.
+* "This folder" ensure only PNG files named `YYYY-MM-DD-N.png`.
