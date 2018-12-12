@@ -1,6 +1,6 @@
 # Counselor <Project Proposal / Working Document>
 
-> "JavaScript File Types"
+> `File` and `Folder` types and JavaScript File Types
 
 JavaScript is powering everything, and there are [hundreds of different ways to do things](https://twitter.com/thomasreggi/status/1011984925027954688), small decisions here and there that different developers need to keep making. We look at the days when project frameworks came with conventions like [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) with both longing for understanding and unease at being restricted. Words like `system`, `controller`, `services`, `model`, `utils`, `libs`, `common`, `main`, `server`, `app`, all start to loose their meaning when they are next to other similar concepts, theres a mixing, a concept soup that takes these once great ideas and strips them of context. 
 
