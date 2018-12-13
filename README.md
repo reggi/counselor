@@ -48,6 +48,10 @@ This file outlines two different ideas:
 * Especially when there are many people working on the same project?
 * Limitations, restrictions, definitions, consistancy, accountablity.
 * Files within a folder should be consistant in some ways.
+* Are the same file extension?
+* Use the same file naming convention?
+* Contains no subdirectories?
+* How do I ensure that all folders within a folder all contain the same set of files?
 
 ## Essential Learnings
  
@@ -150,7 +154,7 @@ Ideas for recipies:
 * `utils/` (file of functions)
 * `daos/` (file with one class)
 * `no-deps/` (file with no imports)
-* `bin/` (no export, executes javascript)
+* `bin/` (shebang, no export, executes javascript)
 * `lodash/` (only imports lodash returns one function
 
 ## Syntax Examples
