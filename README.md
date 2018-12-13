@@ -42,6 +42,13 @@ This file outlines two different ideas:
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Summary
+
+* How do you keep a project organized?
+* Especially when there are many people working on the same project?
+* Limitations, restrictions, definitions, consistancy, accountablity.
+* Files within a folder should be consistant in some ways.
+
 ## Essential Learnings
  
 What I am looking for is a way to take a TypeScript file and query for the different parts and pieces of code. Then you can assert different things to be consistent for all thoses pieces of code. 
@@ -143,6 +150,8 @@ Ideas for recipies:
 * `utils/` (file of functions)
 * `daos/` (file with one class)
 * `no-deps/` (file with no imports)
+* `bin/` (no export, executes javascript)
+* `lodash/` (only imports lodash returns one function
 
 ## Syntax Examples
 
@@ -434,7 +443,12 @@ This is bigger then just validating JavaScript and TypeScript types within the e
 
 At the root of an app theres a switchboard file and tells what folders and files contain what types.
 
+```js
+lint.folder.named('component').follows(dumbReactComponentRecipe)
+lint.folder.named('redux').follows(ducksModularReduxRecipe)
+lint.folder.named('middleware').follows(expressMiddlewareRecipe)
+```
+
 ### 2. Config File within Folder
 
 Within each Folder theres a config that describes it's type.
-
