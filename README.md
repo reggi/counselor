@@ -112,6 +112,8 @@ Query class all methods
 
 ## Example Code Enforce
 
+All of these examples of code do the same thing? If you have ONE way of doing something like this in your application, how do you enforce it?
+
 ```typescript
 export const LOVE = 'love'
 export default LOVE
